@@ -1,102 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang=en>
 <head>
-  <meta charset="utf-8">
-  
-  <title>How to create custom storyboard-friendly UIView without XIB | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="One is never served so well as by oneself. Charles-Guillaume Étienne In this short tutorial we will create a custom UI control view, make it easily designable with storyboard and auto-layout compatibl">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="One is never served so well as by oneself. Charles-Guillaume Étienne In this short tutorial we will create a custom UI control view, make it easily designable with storyboard and auto-layout compatibl">
 <meta name="keywords" content="ios,xcode,storyboard,swift,ibdesignable">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to create custom storyboard-friendly UIView without XIB">
-<meta property="og:url" content="http://yoursite.com/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/index.html">
+<meta property="og:site_name" content="Roman Filippov&#39;s personal website">
 <meta property="og:description" content="One is never served so well as by oneself. Charles-Guillaume Étienne In this short tutorial we will create a custom UI control view, make it easily designable with storyboard and auto-layout compatibl">
-<meta property="og:image" content="http://yoursite.com/images/xib_header.png">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://filippov.tk/images/xib_header.png">
 <meta property="og:image" content="https://koenig-media.raywenderlich.com/uploads/2014/12/1-FloUnitCircle.png">
-<meta property="og:image" content="http://yoursite.com/images/ib_1.png">
-<meta property="og:image" content="http://yoursite.com/images/ib_2.png">
-<meta property="og:image" content="http://yoursite.com/images/ib_3.png">
+<meta property="og:image" content="http://filippov.tk/images/ib_1.png">
+<meta property="og:image" content="http://filippov.tk/images/ib_2.png">
+<meta property="og:image" content="http://filippov.tk/images/ib_3.png">
 <meta property="og:updated_time" content="2017-09-26T23:00:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to create custom storyboard-friendly UIView without XIB">
 <meta name="twitter:description" content="One is never served so well as by oneself. Charles-Guillaume Étienne In this short tutorial we will create a custom UI control view, make it easily designable with storyboard and auto-layout compatibl">
-<meta name="twitter:image" content="http://yoursite.com/images/xib_header.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-
+<meta name="twitter:image" content="http://filippov.tk/images/xib_header.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>How to create custom storyboard-friendly UIView without XIB</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
 </head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-How-to-create-custom-Storyboard-frendly-UIView-without-XIB" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/" class="article-date">
-  <time datetime="2017-09-22T21:00:07.000Z" itemprop="datePublished">2017-09-23</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-  </div>
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/cv/">CV</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://github.com/filiroman">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2017/09/28/How-to-make-self-resizing-table-view-cells/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/&text=How to create custom storyboard-friendly UIView without XIB"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/&title=How to create custom storyboard-friendly UIView without XIB"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/&is_video=false&description=How to create custom storyboard-friendly UIView without XIB"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=How to create custom storyboard-friendly UIView without XIB&body=Check out this article: http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/&title=How to create custom storyboard-friendly UIView without XIB"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/&title=How to create custom storyboard-friendly UIView without XIB"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/&title=How to create custom storyboard-friendly UIView without XIB"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/&title=How to create custom storyboard-friendly UIView without XIB"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/&name=How to create custom storyboard-friendly UIView without XIB&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
 
-  </div>
-  <div class="article-inner">
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Creating-a-project"><span class="toc-number">1.</span> <span class="toc-text">Creating a project</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Initializers-and-constraints"><span class="toc-number">2.</span> <span class="toc-text">Initializers and constraints</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Draw-our-view"><span class="toc-number">3.</span> <span class="toc-text">Draw our view</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
     
-    
-      <header class="article-header">
+    <div class="content index width mx-auto px2 my4">
         
-  
-    <h1 class="article-title" itemprop="name">
-      How to create custom storyboard-friendly UIView without XIB
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        How to create custom storyboard-friendly UIView without XIB
     </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Roman Filippov's personal website</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-09-22T21:00:07.000Z" itemprop="datePublished">23-09-2017</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/ibdesignable/">ibdesignable</a>, <a class="tag-link" href="/tags/ios/">ios</a>, <a class="tag-link" href="/tags/storyboard/">storyboard</a>, <a class="tag-link" href="/tags/swift/">swift</a>, <a class="tag-link" href="/tags/xcode/">xcode</a>
+    </div>
+
+
+    </div>
+  </header>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote><p>One is never served so well as by oneself.</p>
+  <div class="content" itemprop="articleBody">
+    <blockquote><p>One is never served so well as by oneself.</p>
 <footer><strong>Charles-Guillaume Étienne</strong></footer></blockquote>
 <p>In this short tutorial we will create a custom UI control view, make it easily designable with storyboard and auto-layout compatible. With no doubt you can design and create your views using XIB files or directly on storyboards, but in complex applications views can be complicated too. They can be dynamically loaded, depending on the events or just hard-coded using some other 3rd party view classes that aren’t storyboard-friendly. Anyway you will see that the process itself is very easy and understandable, so let’s get started!</p>
 <h2 id="Creating-a-project"><a href="#Creating-a-project" class="headerlink" title="Creating a project"></a>Creating a project</h2><p>Open Xcode and create a new single-view application. In this tutorial I’ll use Swift 4, but it’s of course possible to make everything using earlier versions of Swift (with a slightly different syntax) or even Objective-C.</p>
@@ -131,128 +177,116 @@
 <p>By the way, I’ve recently pushed my RFCircleView into the CocoaPods repository. If you don’t know what CocoaPods is, go to the <a href="https://cocoapods.org/" target="_blank" rel="external">https://cocoapods.org/</a> right now and check it out - this is an amazing tool with a huge library of community-developed plugins to do almost anything on iOS. <a href="https://cocoapods.org/pods/RFCircleView" target="_blank" rel="external">Here is the link</a> to my view repository. So that’s all for today, I hope that the article was helpful!</p>
 <p>Cheers,<br>Roman Filippov.</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/" data-id="cjcvru18e0002d3scqioje6eo" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ibdesignable/">ibdesignable</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/storyboard/">storyboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xcode/">xcode</a></li></ul>
-
-    </footer>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2017/09/28/How-to-make-self-resizing-table-view-cells/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          How to make self-resizing table view cells
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
-  
 </article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a></li></ul>
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
     </div>
-  </div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ibdesignable/">ibdesignable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/storyboard/">storyboard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode/">xcode</a></li></ul>
+
     </div>
-  </div>
-
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/ibdesignable/" style="font-size: 10px;">ibdesignable</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/storyboard/" style="font-size: 10px;">storyboard</a> <a href="/tags/swift/" style="font-size: 10px;">swift</a> <a href="/tags/xcode/" style="font-size: 10px;">xcode</a>
-    </div>
-  </div>
+      <div id="footer-post-container">
+  <div id="footer-post">
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
+    <div id="nav-footer" style="display: none">
       <ul>
-        
-          <li>
-            <a href="/2017/09/28/How-to-make-self-resizing-table-view-cells/">How to make self-resizing table view cells</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/">How to create custom storyboard-friendly UIView without XIB</a>
-          </li>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/cv/">CV</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://github.com/filiroman">Projects</a></li>
         
       </ul>
     </div>
-  </div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Creating-a-project"><span class="toc-number">1.</span> <span class="toc-text">Creating a project</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Initializers-and-constraints"><span class="toc-number">2.</span> <span class="toc-text">Initializers and constraints</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Draw-our-view"><span class="toc-number">3.</span> <span class="toc-text">Draw our view</span></a></li></ol>
     </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/&text=How to create custom storyboard-friendly UIView without XIB"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/&title=How to create custom storyboard-friendly UIView without XIB"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/&is_video=false&description=How to create custom storyboard-friendly UIView without XIB"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=How to create custom storyboard-friendly UIView without XIB&body=Check out this article: http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/&title=How to create custom storyboard-friendly UIView without XIB"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/&title=How to create custom storyboard-friendly UIView without XIB"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/&title=How to create custom storyboard-friendly UIView without XIB"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/&title=How to create custom storyboard-friendly UIView without XIB"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://filippov.tk/2017/09/23/How-to-create-custom-Storyboard-frendly-UIView-without-XIB/&name=How to create custom storyboard-friendly UIView without XIB&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Roman Filippov
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/cv/">CV</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a href="https://github.com/filiroman">Projects</a></li>
+        
+      </ul>
+    </nav>
   </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-  </div>
 </body>
 </html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'filippov-tk';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
